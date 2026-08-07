@@ -8,7 +8,33 @@
 }
 
 /* ============================
-   2. HERO / APRESENTAÇÃO
+   2. CARDS DE EXERCÍCIOS
+   ============================ */
+.card-container {
+    background-color: #f1f3f4;
+    border-left: 6px solid #005088;
+    padding: 15px 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #005088;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-desc {
+    color: #555555;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ============================
+   3. HERO / APRESENTAÇÃO
    ============================ */
 .hero-card {
     background: linear-gradient(135deg, #0b5c91 0%, #1180bf 50%, #0b3d66 100%);
@@ -46,6 +72,11 @@
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.94);
     margin: 0;
+}
+
+.stPageLink {
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
 
 .hero-actions {
