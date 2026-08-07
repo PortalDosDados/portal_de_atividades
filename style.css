@@ -1,0 +1,175 @@
+/* ============================
+   1. ESTRUTURA GERAL
+   ============================ */
+.main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.justificado {
+    text-align: justify;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    margin-bottom: 16px;
+}
+
+/* ============================
+   2. BOTÕES DE REDES SOCIAIS
+   ============================ */
+
+/* ESTILO BASE */
+.btn-linkedin, .btn-youtube, .btn-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    margin-bottom: 15px;
+}
+
+/* ÍCONES (SVG) */
+.btn-linkedin svg, .btn-youtube svg, .btn-github svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+/* EFEITO DE CLIQUE */
+.btn-linkedin:active, .btn-youtube:active, .btn-github:active {
+    transform: scale(0.98);
+}
+
+/* ============================
+   3. CORES ESPECÍFICAS
+   ============================ */
+
+/* --- LinkedIn --- */
+.btn-linkedin {
+    background-color: #0A66C2;
+}
+.btn-linkedin:hover {
+    background-color: #084B8C;
+}
+
+/* --- YouTube --- */
+.btn-youtube {
+    background-color: #FF0000;
+}
+.btn-youtube:hover {
+    background-color: #CC0000;
+}
+
+/* --- GitHub --- */
+.btn-github {
+    background-color: #24292e;
+}
+.btn-github:hover {
+    background-color: #1b1f23;
+}
+
+/* ============================
+   4. ELEMENTOS STREAMLIT (Métricas & Cards)
+   ============================ */
+
+/* Container da Métrica (O cartãozinho) */
+div[data-testid="stMetric"] {
+    background-color: #f0f2f6;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+/* Adaptação para Modo Escuro */
+@media (prefers-color-scheme: dark) {
+    div[data-testid="stMetric"] {
+        background-color: #262730;
+    }
+}
+
+/* O Valor Numérico/Texto Principal */
+div[data-testid="stMetricValue"] {
+    font-size: 1.8rem !important;
+    font-weight: 700;
+}
+
+/* O Rótulo (Label) acima do valor */
+div[data-testid="stMetricLabel"] {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ============================
+   5. RESPONSIVIDADE (Mobile / Tablet)
+   ============================ */
+@media (max-width: 768px) {
+    .main {
+        max-width: 95%;
+        margin: 0 auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .justificado {
+        font-size: 0.95rem;
+        line-height: 1.45;
+    }
+
+    .btn-linkedin, .btn-youtube, .btn-github {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .btn-linkedin svg, .btn-youtube svg, .btn-github svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    img, .stImage img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Tornar dataframes e tabelas roláveis horizontalmente em telas pequenas */
+    .stDataFrame, table {
+        width: 100% !important;
+        overflow-x: auto;
+        display: block;
+    }
+
+    div[data-testid="stMetricValue"] {
+        font-size: 1.4rem !important;
+    }
+
+    /* Forçar empilhamento vertical nas colunas do Streamlit quando houver pouco espaço */
+    .stColumns, .stColumns > div, .row-widget.stColumns, .css-1l02zno > div {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* Espaçamento geral reduzido para caber melhor em telas pequenas */
+    .block-container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .justificado { font-size: 0.92rem; }
+    .btn-linkedin, .btn-youtube, .btn-github { font-size: 13px; padding: 7px 10px; }
+    div[data-testid="stMetricValue"] { font-size: 1.2rem !important; }
+}
